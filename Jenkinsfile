@@ -4,20 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Your build steps here
-                sh 'echo "Building..."'
+                // Compile hello.cpp
+                sh 'g++ -o hello hello.cpp'
             }
         }
         stage('Test') {
             steps {
-                // Your test steps here
-                sh 'echo "Testing..."'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                // Your deployment steps here
-                sh 'echo "Deploying..."'
+                // Run hello.cpp
+                sh './hello'
             }
         }
     }
